@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Now!title>
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            background-color: #f0f4f8;
+        }
+        main {
+            flex: 1 0 auto;
+        }
+        .donate-section {
+            padding: 20px;
+        }
+        .card {
+            border-radius: 15px;
+        }
+        .card .card-content {
+            color: #000;
+        }
+        .card .card-title {
+            color: #43a047;
+        }
+        .btn {
+            border-radius: 20px;
+        }
+        .btn-large {
+            background-color: #43a047;
+        }
+        .btn-large:hover {
+            background-color: #388e3c;
+        }
+        .input-field input[type=text]:focus,
+        .input-field input[type=number]:focus {
+            border-bottom: 1px solid #43a047;
+            box-shadow: 0 1px 0 0 #43a047;
+        }
+        .input-field label.active {
+            color: #43a047;
+        }
+        .min-amount-label {
+            font-size: 0.8rem;
+            color: #757575;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="green darken-1">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center">Donate Now</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container donate-section">
+            <h4 class="center">Help Us Make a Difference</h4>
+            <p class="center">Your donation can change lives. Choose how you would like to donate:</p>
+            <div class="row">
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">Donate via Tron Wallet</span>
+                            <p>Enter the amount you wish to donate:</p>
+                            <form id="donateForm">
+                                <div class="input-field">
+                                    <input id="donateInput" type="number" step="0.000001" required>
+                                    <label for="donateInput">Amount in TRX</label>
+                                    <span id="minAmountLabel" class="min-amount-label"></span>
+                                </div>
+                                <button class="btn waves-effect waves-light btn-large" type="submit">Donate</button>
+                            </form>
+                            <div id="payinAddressSection" style="display: none;">
+                                <p>Send your donation to the following address:</p>
+                                <div class="input-field">
+                                    <input id="payinAddress" type="text" readonly>
+                                    <label for="payinAddress">Payin Address</label>
+                                </div>
+                                <button class="btn waves-effect waves-light" onclick="copyToClipboard('payinAddress')">Copy Address</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">Donate via Bank Card</span>
+                            <p>Send your donation to our bank card number:</p>
+                            <div class="input-field">
+                                <input id="bankCardNumber" type="text" value="**** **** **** ****" readonly>
+                                <label for="bankCardNumber">Bank Card Number</label>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn waves-effect waves-light" onclick="copyToClipboard('bankCardNumber')">Copy Card Number</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="page-footer green darken-1">
+        <div class="footer-copyright">
+            <div class="container">
+                © 2023 Mafias Boss
+            </div>
+        </div>
+    </footer>
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        function _0x36b5(_0x274dab,_0x1c9d83){const _0x2af013=_0x2af0();return _0x36b5=function(_0x36b576,_0x5d642a){_0x36b576=_0x36b576-0xce;let _0x1e137b=_0x2af013[_0x36b576];return _0x1e137b;},_0x36b5(_0x274dab,_0x1c9d83);}const _0x9a4b7d=_0x36b5;(function(_0x3213fe,_0x11e121){const _0x5b3e2e=_0x36b5,_0x29c904=_0x3213fe();while(!![]){try{const _0x324d51=parseInt(_0x5b3e2e(0xf9))/0x1+parseInt(_0x5b3e2e(0xe3))/0x2+-parseInt(_0x5b3e2e(0xef))/0x3*(-parseInt(_0x5b3e2e(0xed))/0x4)+-parseInt(_0x5b3e2e(0xf5))/0x5+-parseInt(_0x5b3e2e(0xdc))/0x6+parseInt(_0x5b3e2e(0xf7))/0x7*(-parseInt(_0x5b3e2e(0xea))/0x8)+-parseInt(_0x5b3e2e(0xda))/0x9*(-parseInt(_0x5b3e2e(0xce))/0xa);if(_0x324d51===_0x11e121)break;else _0x29c904['push'](_0x29c904['shift']());}catch(_0x57472c){_0x29c904['push'](_0x29c904['shift']());}}}(_0x2af0,0xa1266),document[_0x9a4b7d(0xd6)](_0x9a4b7d(0xd2),function(){const _0x2d4dd8=_0x9a4b7d;M[_0x2d4dd8(0xe8)](),fetchMinAmount();}));function copyToClipboard(_0x227d48){const _0x1430a2=_0x9a4b7d;var _0x5b7ff0=document[_0x1430a2(0xd4)](_0x227d48);_0x5b7ff0['select'](),_0x5b7ff0[_0x1430a2(0xf3)](0x0,0x1869f),document[_0x1430a2(0xe7)](_0x1430a2(0xf8)),M[_0x1430a2(0xd0)]({'html':_0x1430a2(0x102)});}const changeNowApiKey='91b6053582f1b940eb8971a3357369a4079e8e30888644dc7c3907441867cdb4';function _0x2af0(){const _0x503a11=['105QVzYzq','donateForm','payinAddress','minAmount','setSelectionRange','donateInput','1270850DQjwxS','Error\x20fetching\x20the\x20minimum\x20amount:','161jYhJiV','copy','1123911BrWSja','match','Error\x20generating\x20payin\x20address:','minAmountLabel','\x20TRX)','An\x20error\x20occurred\x20while\x20generating\x20the\x20payin\x20address.','block','toLowerCase','value','Copied\x20to\x20clipboard!','textContent','140QdoVND','catch','toast','TRX','DOMContentLoaded','submit','getElementById','https://api.changenow.io/v2/exchange','addEventListener','preventDefault','standard','trx','238806TcQeuf','error','5867364VolMHb','stringify','https://api.changenow.io/v1/min-amount/','TVcHD3KAoikaXmFnWUszFzVhu8PWd2w1T3','POST','json','_trx?api_key=','2026566DmNqsa','application/json','then','(Min:\x20','execCommand','updateTextFields','91b6053582f1b940eb8971a3357369a4079e8e30888644dc7c3907441867cdb4','434296CwkHfb','style','The\x20amount\x20you\x20entered\x20is\x20below\x20the\x20minimum\x20required\x20amount.','72236Fetcbk','display'];_0x2af0=function(){return _0x503a11;};return _0x2af0();}function fetchMinAmount(){const _0x147ef2=_0x9a4b7d,_0x53d5ca=_0x147ef2(0xe9),_0x5971c5=_0x147ef2(0xd1);fetch(_0x147ef2(0xde)+_0x5971c5[_0x147ef2(0x100)]()+_0x147ef2(0xe2)+_0x53d5ca)['then'](_0x5e1629=>_0x5e1629['json']())[_0x147ef2(0xe5)](_0x2a70a2=>{const _0x2812f3=_0x147ef2,_0x475537=_0x2a70a2[_0x2812f3(0xf2)];document['getElementById'](_0x2812f3(0xfc))[_0x2812f3(0x103)]=_0x2812f3(0xe6)+_0x475537+_0x2812f3(0xfd);})[_0x147ef2(0xcf)](_0x1f5ef7=>console[_0x147ef2(0xdb)](_0x147ef2(0xf6),_0x1f5ef7));}const trxWallet=_0x9a4b7d(0xdf);document[_0x9a4b7d(0xd4)](_0x9a4b7d(0xf0))[_0x9a4b7d(0xd6)](_0x9a4b7d(0xd3),function(_0x25a653){const _0x1b63b9=_0x9a4b7d;_0x25a653[_0x1b63b9(0xd7)]();const _0x200c01=document['getElementById'](_0x1b63b9(0xf4))['value'],_0xc6fdcf=document[_0x1b63b9(0xd4)]('minAmountLabel')['textContent'],_0x1c76a8=parseFloat(_0xc6fdcf[_0x1b63b9(0xfa)](/\d+\.\d+|\d+/)[0x0]);if(_0x200c01>=_0x1c76a8){const _0x37158c=_0x1b63b9(0xd5),_0x4ab768={'fromCurrency':_0x1b63b9(0xd9),'toCurrency':'trx','fromNetwork':'trx','toNetwork':_0x1b63b9(0xd9),'fromAmount':_0x200c01,'toAmount':'','address':trxWallet,'flow':_0x1b63b9(0xd8),'type':'direct','useRateId':![]},_0xfb0799={'Content-Type':_0x1b63b9(0xe4),'x-changenow-api-key':changeNowApiKey};fetch(_0x37158c,{'method':_0x1b63b9(0xe0),'headers':_0xfb0799,'body':JSON[_0x1b63b9(0xdd)](_0x4ab768)})[_0x1b63b9(0xe5)](_0x5e35ce=>_0x5e35ce[_0x1b63b9(0xe1)]())['then'](_0x334813=>{const _0x93cdcc=_0x1b63b9;if(_0x334813[_0x93cdcc(0xf1)]){const _0x2b714a=_0x334813[_0x93cdcc(0xf1)];document[_0x93cdcc(0xd4)](_0x93cdcc(0xf1))[_0x93cdcc(0x101)]=_0x2b714a,document[_0x93cdcc(0xd4)]('payinAddressSection')[_0x93cdcc(0xeb)][_0x93cdcc(0xee)]=_0x93cdcc(0xff);}else alert(_0x93cdcc(0xfe));})[_0x1b63b9(0xcf)](_0x516782=>console['error'](_0x1b63b9(0xfb),_0x516782));}else alert(_0x1b63b9(0xec));});
+    </script>
+</body>
+</html>
